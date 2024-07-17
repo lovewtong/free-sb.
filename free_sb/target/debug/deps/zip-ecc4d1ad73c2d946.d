@@ -1,0 +1,20 @@
+C:\Users\WU\Desktop\free-sb\free_sb\target\debug\deps\libzip-ecc4d1ad73c2d946.rmeta: C:\Users\WU\.cargo\registry\src\index.crates.io-6f17d22bba15001f\zip-1.1.4\src/lib.rs C:\Users\WU\.cargo\registry\src\index.crates.io-6f17d22bba15001f\zip-1.1.4\src\compression.rs C:\Users\WU\.cargo\registry\src\index.crates.io-6f17d22bba15001f\zip-1.1.4\src\cp437.rs C:\Users\WU\.cargo\registry\src\index.crates.io-6f17d22bba15001f\zip-1.1.4\src\crc32.rs C:\Users\WU\.cargo\registry\src\index.crates.io-6f17d22bba15001f\zip-1.1.4\src\extra_fields\mod.rs C:\Users\WU\.cargo\registry\src\index.crates.io-6f17d22bba15001f\zip-1.1.4\src\extra_fields\extended_timestamp.rs C:\Users\WU\.cargo\registry\src\index.crates.io-6f17d22bba15001f\zip-1.1.4\src\read.rs C:\Users\WU\.cargo\registry\src\index.crates.io-6f17d22bba15001f\zip-1.1.4\src\read\stream.rs C:\Users\WU\.cargo\registry\src\index.crates.io-6f17d22bba15001f\zip-1.1.4\src\result.rs C:\Users\WU\.cargo\registry\src\index.crates.io-6f17d22bba15001f\zip-1.1.4\src\spec.rs C:\Users\WU\.cargo\registry\src\index.crates.io-6f17d22bba15001f\zip-1.1.4\src\types.rs C:\Users\WU\.cargo\registry\src\index.crates.io-6f17d22bba15001f\zip-1.1.4\src\write.rs C:\Users\WU\.cargo\registry\src\index.crates.io-6f17d22bba15001f\zip-1.1.4\src\zipcrypto.rs C:\Users\WU\.cargo\registry\src\index.crates.io-6f17d22bba15001f\zip-1.1.4\src\unstable.rs
+
+C:\Users\WU\Desktop\free-sb\free_sb\target\debug\deps\zip-ecc4d1ad73c2d946.d: C:\Users\WU\.cargo\registry\src\index.crates.io-6f17d22bba15001f\zip-1.1.4\src/lib.rs C:\Users\WU\.cargo\registry\src\index.crates.io-6f17d22bba15001f\zip-1.1.4\src\compression.rs C:\Users\WU\.cargo\registry\src\index.crates.io-6f17d22bba15001f\zip-1.1.4\src\cp437.rs C:\Users\WU\.cargo\registry\src\index.crates.io-6f17d22bba15001f\zip-1.1.4\src\crc32.rs C:\Users\WU\.cargo\registry\src\index.crates.io-6f17d22bba15001f\zip-1.1.4\src\extra_fields\mod.rs C:\Users\WU\.cargo\registry\src\index.crates.io-6f17d22bba15001f\zip-1.1.4\src\extra_fields\extended_timestamp.rs C:\Users\WU\.cargo\registry\src\index.crates.io-6f17d22bba15001f\zip-1.1.4\src\read.rs C:\Users\WU\.cargo\registry\src\index.crates.io-6f17d22bba15001f\zip-1.1.4\src\read\stream.rs C:\Users\WU\.cargo\registry\src\index.crates.io-6f17d22bba15001f\zip-1.1.4\src\result.rs C:\Users\WU\.cargo\registry\src\index.crates.io-6f17d22bba15001f\zip-1.1.4\src\spec.rs C:\Users\WU\.cargo\registry\src\index.crates.io-6f17d22bba15001f\zip-1.1.4\src\types.rs C:\Users\WU\.cargo\registry\src\index.crates.io-6f17d22bba15001f\zip-1.1.4\src\write.rs C:\Users\WU\.cargo\registry\src\index.crates.io-6f17d22bba15001f\zip-1.1.4\src\zipcrypto.rs C:\Users\WU\.cargo\registry\src\index.crates.io-6f17d22bba15001f\zip-1.1.4\src\unstable.rs
+
+C:\Users\WU\.cargo\registry\src\index.crates.io-6f17d22bba15001f\zip-1.1.4\src/lib.rs:
+C:\Users\WU\.cargo\registry\src\index.crates.io-6f17d22bba15001f\zip-1.1.4\src\compression.rs:
+C:\Users\WU\.cargo\registry\src\index.crates.io-6f17d22bba15001f\zip-1.1.4\src\cp437.rs:
+C:\Users\WU\.cargo\registry\src\index.crates.io-6f17d22bba15001f\zip-1.1.4\src\crc32.rs:
+C:\Users\WU\.cargo\registry\src\index.crates.io-6f17d22bba15001f\zip-1.1.4\src\extra_fields\mod.rs:
+C:\Users\WU\.cargo\registry\src\index.crates.io-6f17d22bba15001f\zip-1.1.4\src\extra_fields\extended_timestamp.rs:
+C:\Users\WU\.cargo\registry\src\index.crates.io-6f17d22bba15001f\zip-1.1.4\src\read.rs:
+C:\Users\WU\.cargo\registry\src\index.crates.io-6f17d22bba15001f\zip-1.1.4\src\read\stream.rs:
+C:\Users\WU\.cargo\registry\src\index.crates.io-6f17d22bba15001f\zip-1.1.4\src\result.rs:
+C:\Users\WU\.cargo\registry\src\index.crates.io-6f17d22bba15001f\zip-1.1.4\src\spec.rs:
+C:\Users\WU\.cargo\registry\src\index.crates.io-6f17d22bba15001f\zip-1.1.4\src\types.rs:
+C:\Users\WU\.cargo\registry\src\index.crates.io-6f17d22bba15001f\zip-1.1.4\src\write.rs:
+C:\Users\WU\.cargo\registry\src\index.crates.io-6f17d22bba15001f\zip-1.1.4\src\zipcrypto.rs:
+C:\Users\WU\.cargo\registry\src\index.crates.io-6f17d22bba15001f\zip-1.1.4\src\unstable.rs:
+
+# env-dep:CARGO_PKG_VERSION=1.1.4
