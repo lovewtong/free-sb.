@@ -1,7 +1,8 @@
-use docx_rust::DocxFile;
-use docx_rust::*;
+use docx_rs::{read_docx, Docx, Paragraph, Run, Text};
 use std::fs;
+use std::fs::File;
 use std::io::{self, Read, Write};
+use std::io::{BufRead, BufReader, BufWriter};
 use std::path::Path;
 use walkdir::WalkDir;
 
@@ -62,35 +63,45 @@ fn process_txt_file(path: &Path) {
 fn process_word_file(path: &Path) {
     println!("the world is:{}", path.display());
 
-    // 读取DOCX文件
-    let mut docx_file = match DocxFile::from_file(path) {
-        Ok(docx) => docx,
+     // 打开 DOCX 文件
+     let file = match File::open(path) {
+        Ok(file) => file,
         Err(err) => {
-            eprintln!("Failed to read the DOCX {}:{:?}", path.display(), err);
+            eprintln!("Failed to open file {}: {:?}", path.display(), err);
             return;
         }
     };
 
-    // 解析DOCX内容
-    let mut docx = match docx_file.parse() {
+    // 读取文件内容到字节向量中
+    let mut reader = BufReader::new(file);
+    let mut buffer = Vec::new();
+    if let Err(err) = reader.read_to_end(&mut buffer) {
+        eprintln!("Failed to read DOCX file {}: {:?}", path.display(), err);
+        return;
+    }
+
+    // 读取 DOCX 文件内容
+    let mut docx = match read_docx(&buffer[..]) {
         Ok(docx) => docx,
         Err(err) => {
-            eprintln!("Failed to parse the DOCX {}:{:?}", path.display(), err);
+            eprintln!("Failed to read DOCX file {}: {:?}", path.display(), err);
             return;
         }
     };
 
     // 替换关键词
-    for para in docx.document.body.content.iter_mut() {
+    for para in docx.document.body_mut().paragraphs_mut() {
         for run in para.runs_mut() {
             if let Some(text) = run.text_mut() {
-                *text = text.replace("20240716", "20240717");
+                if text == "20240716" {
+                    *text = "20240717".to_string();
+                }
             }
         }
     }
 
     // 写回文件
-    let mut out_file = match fs::File::create(path) {
+    let mut out_file = match File::create(path) {
         Ok(file) => file,
         Err(err) => {
             eprintln!("Failed to create file {}: {:?}", path.display(), err);
