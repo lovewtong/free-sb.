@@ -8,3 +8,5 @@ edition = "2021"
 [dependencies]
 walkdir = '2.3' # 遍历
 docx-rs = "0.4.17"
+zip = "0.6"
+xml-rs = "2.3.2"

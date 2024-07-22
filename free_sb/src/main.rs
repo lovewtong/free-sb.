@@ -1,10 +1,12 @@
-use docx_rs::{read_docx, Docx, Paragraph, Run, Text};
+use docx_rs::{read_docx, DocumentChild, Docx, Paragraph, Run, Text, ParagraphChild, RunChild};
 use std::fs;
 use std::fs::File;
 use std::io::{self, Read, Write};
 use std::io::{BufRead, BufReader, BufWriter};
 use std::path::Path;
 use walkdir::WalkDir;
+use xml::writer::{EmitterConfig, EventWriter, XmlEvent};
+
 
 fn main() {
     // 文件路径
@@ -63,8 +65,8 @@ fn process_txt_file(path: &Path) {
 fn process_word_file(path: &Path) {
     println!("the world is:{}", path.display());
 
-     // 打开 DOCX 文件
-     let file = match File::open(path) {
+    // 打开 DOCX 文件
+    let file = match File::open(path) {
         Ok(file) => file,
         Err(err) => {
             eprintln!("Failed to open file {}: {:?}", path.display(), err);
@@ -89,29 +91,50 @@ fn process_word_file(path: &Path) {
         }
     };
 
-    // 替换关键词
-    for para in docx.document.body_mut().paragraphs_mut() {
-        for run in para.runs_mut() {
-            if let Some(text) = run.text_mut() {
-                if text == "20240716" {
-                    *text = "20240717".to_string();
+    // 遍历文档的 children
+    for child in &mut docx.document.children {
+        if let DocumentChild::Paragraph(ref mut paragraph) = child {
+            // 遍历段落的 children
+            for run in &mut paragraph.children {
+                if let ParagraphChild::Run(ref mut run) = run {
+                    // 遍历 Run 的 children
+                    for run_child in &mut run.children {
+                        if let RunChild::Text(ref mut text) = run_child {
+                            if text.text == "20240716" {
+                                text.text = "20240717".to_string();
+                            }
+                        }
+                    }
                 }
             }
         }
     }
+   // 使用 XMLBuilder 写入内容
+   let xml_builder = XMLBuilder::new();
 
-    // 写回文件
-    let mut out_file = match File::create(path) {
-        Ok(file) => file,
-        Err(err) => {
-            eprintln!("Failed to create file {}: {:?}", path.display(), err);
-            return;
-        }
-    };
+   // 这里你需要实现将 Docx 转换为 XML 的逻辑
+   let xml_content = build_xml_from_docx(&docx, xml_builder);
 
-    if let Err(err) = docx.write(&mut out_file) {
-        eprintln!("Failed to write the DOCX {}: {:?}", path.display(), err);
-    }
+   // 写回文件
+   let out_file = match File::create(path) {
+       Ok(file) => file,
+       Err(err) => {
+           eprintln!("Failed to create file {}: {:?}", path.display(), err);
+           return;
+       }
+   };
+   
+   let mut writer = BufWriter::new(out_file);
+   if let Err(err) = writer.write_all(&xml_content) {
+       eprintln!("Failed to write DOCX file {}: {:?}", path.display(), err);
+   }
+}
+
+fn build_xml_from_docx(docx: &Docx, mut builder: XMLBuilder) -> Vec<u8> {
+   // Implement XML building from Docx content here
+   // This function should convert the Docx content into XML and return it as Vec<u8>
+   // This is a placeholder function
+   builder.build()
 }
 
 fn process_excel_file(path: &Path) {
