@@ -6,7 +6,7 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-walkdir = '2.3' # 遍历
-docx-rs = "0.4.17"
-zip = "0.6"
-xml-rs = "2.3.2"
+walkdir = "2.3"
+zip = "0.6.5"
+quick-xml = "0.36.2"
+calamine = "0.21"
